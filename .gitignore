@@ -20,3 +20,4 @@ vignettes/*.pdf
 
 *database.sqlite
 *.DS_Store
+.Rproj.user
