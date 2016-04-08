@@ -6,41 +6,41 @@ library(tidyr)    # tidy data
 library(maps)     # get map data
 library(ggthemes) # display data
 
+# The data is saved in a SQLite datbase. This enables us to connect to the database
+db <- dbConnect(dbDriver("SQLite"), "./database.sqlite")
+
+# This queries the StateNames database and pulls out the state-by-state information for all babies
+nameByStateOverTime <- dbGetQuery(db, paste0("
+                                             SELECT *
+                                             FROM StateNames
+                                             ORDER BY YEAR"))
+
+# Add the state names for the mapping package
+stateAbbr <- unique(nameByStateOverTime$State)
+stateName = c("alaska", "alabama", "arkansas", "arizona", "california",
+              "colorado", "connecticut", "district of columbia", "delaware",
+              "florida", "georgia", "hawaii", "iowa", "idaho",
+              "illinois", "indiana", "kansas", "kentucky", "louisiana",
+              "massachusetts", "maryland", "maine", "michigan", "minnesota",
+              "missouri", "mississippi", "montana", "north carolina", "north dakota",
+              "nebraska", "new hampshire", "new jersey", "new mexico", "nevada",
+              "new york", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", 
+              "south carolina", "south dakota", "tennessee", "texas", "utah",
+              "virginia", "vermont", "washington", "wisconsin", "west virginia",
+              "wyoming")
+stateList = data.frame(State = stateAbbr, region = stateName)
+
+decadeState <- expand.grid(Decade = seq(from = 1910, to = 2010, by = 10), State = stateAbbr)
+decadeState$Decade = paste0(decadeState$Decade,"s")
+nameByStateOverTime$Decade <- nameByStateOverTime$Year - nameByStateOverTime$Year %% 10
+nameByStateOverTime$Decade = paste0(nameByStateOverTime$Decade,"s")
+
+# calculate the total number of babies for the naming rate
+totNamesCount <- nameByStateOverTime %>%
+  group_by(Decade, State) %>%
+  summarize(totNames = sum(Count))
+
 babyNamePlotter = function(babyName) {
-  # The data is saved in a SQLite datbase. This enables us to connect to the database
-  db <- dbConnect(dbDriver("SQLite"), "./database.sqlite")
-  
-  # This queries the StateNames database and pulls out the state-by-state information for all babies
-  nameByStateOverTime <- dbGetQuery(db, paste0("
-                                               SELECT *
-                                               FROM StateNames
-                                               ORDER BY YEAR"))
-  
-  # Add the state names for the mapping package
-  stateAbbr <- unique(nameByStateOverTime$State)
-  stateName = c("alaska", "alabama", "arkansas", "arizona", "california",
-                "colorado", "connecticut", "district of columbia", "delaware",
-                "florida", "georgia", "hawaii", "iowa", "idaho",
-                "illinois", "indiana", "kansas", "kentucky", "louisiana",
-                "massachusetts", "maryland", "maine", "michigan", "minnesota",
-                "missouri", "mississippi", "montana", "north carolina", "north dakota",
-                "nebraska", "new hampshire", "new jersey", "new mexico", "nevada",
-                "new york", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island", 
-                "south carolina", "south dakota", "tennessee", "texas", "utah",
-                "virginia", "vermont", "washington", "wisconsin", "west virginia",
-                "wyoming")
-  stateList = data.frame(State = stateAbbr, region = stateName)
-  
-  decadeState <- expand.grid(Decade = seq(from = 1910, to = 2010, by = 10), State = stateAbbr)
-  decadeState$Decade = paste0(decadeState$Decade,"s")
-  nameByStateOverTime$Decade <- nameByStateOverTime$Year - nameByStateOverTime$Year %% 10
-  nameByStateOverTime$Decade = paste0(nameByStateOverTime$Decade,"s")
-  
-  # calculate the total number of babies for the naming rate
-  totNamesCount <- nameByStateOverTime %>%
-    group_by(Decade, State) %>%
-    summarize(totNames = sum(Count))
-  
   # calculate the number of babies of the selected name (ignoring gender)
   babyNameCount <- nameByStateOverTime %>%
     filter(Name == babyName) %>%
