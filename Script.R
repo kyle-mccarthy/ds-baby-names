@@ -11,7 +11,7 @@ library(maps)     # get map data
 library(ggthemes) # display data
 
 # The data is saved in a SQLite datbase. This enables us to connect to the database
-db <- dbConnect(dbDriver("SQLite"), "../input/database.sqlite")
+db <- dbConnect(dbDriver("SQLite"), "./database.sqlite")
 
 # This queries the StateNames database and pulls out the state-by-state information for all babies
 nameByStateOverTime <- dbGetQuery(db, paste0("
