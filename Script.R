@@ -1,7 +1,3 @@
-# Fork this script and update the babyName here (and in the script title) to your name / a friend's name.
-# And then see how popular the name was in each state for every decade.
-kyleBabyName <- "Kyle"
-
 # First, we'll load in the libraries that we need to use
 library(dplyr) # data munging and manipulation
 library(ggplot2)  # visualize data
