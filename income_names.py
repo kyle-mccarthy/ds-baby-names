@@ -12,4 +12,8 @@ for index, row in income.iterrows():
     for i in range(1,11):
         state = row['state_' + str(i)]
         # select the subset of names for the year and state and get the most popular ones
-
+        popular = names[(names.Year == year) & (names.State == state)]
+        popular = popular.sort_values('Count', ascending=False)
+        print(popular)
+        break
+    break
