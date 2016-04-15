@@ -27,4 +27,4 @@ high_income_headers = ["year"] + ["state_" + str(x) for x in range(1, 11)]
 
 # export the data to a CSV
 high_df = pd.DataFrame(high_income, columns=high_income_headers)
-high_df.to_csv('data/TopMediaIncomeByYear.csv', index=False)
+high_df.to_csv('data/TopMedianIncomeByYear.csv', index=False)
