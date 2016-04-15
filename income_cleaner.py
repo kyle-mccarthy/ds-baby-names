@@ -1,4 +1,5 @@
 import pandas as pd
+import us
 
 headers = ["location"]
 
@@ -10,6 +11,10 @@ income = pd.read_csv('data/h08.csv', names=headers)
 
 income.to_csv('data/StateIncome.csv', index=False)
 
+# remove non-states from the dataframe
+income = income[income.location != 'United States']
+income = income[income.location != 'D.C.']
+
 high_income = []
 
 for year in range(1984, 2015):
@@ -18,6 +23,8 @@ for year in range(1984, 2015):
     # get the top 10 states for that year
     highest = sorted_df.head(10)
     highest = highest["location"].tolist()
+    # change the values from state names to state abbreviations to stay consistent with baby names data set
+    highest = [us.states.lookup(x).abbr for x in highest]
     highest = [year] + highest
     # add the year + state combo to the list
     high_income.append(highest)
