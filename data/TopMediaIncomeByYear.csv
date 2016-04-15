@@ -1,0 +1,32 @@
+year,state_1,state_2,state_3,state_4,state_5,state_6,state_7,state_8,state_9,state_10
+1984,Alaska,Connecticut,Maryland,Hawaii,New Jersey,Massachusetts,Virginia,New Hampshire,Delaware,Colorado
+1985,Alaska,Connecticut,New Jersey,Maryland,Hawaii,Virginia,Massachusetts,Colorado,California,New Hampshire
+1986,Connecticut,New Jersey,Alaska,Maryland,New Hampshire,Massachusetts,Virginia,California,Hawaii,Colorado
+1987,Hawaii,Maryland,New Jersey,Alaska,Connecticut,New Hampshire,Massachusetts,California,Virginia,Delaware
+1988,Maryland,New Jersey,Connecticut,New Hampshire,Massachusetts,Alaska,Hawaii,Virginia,Washington,Delaware
+1989,Connecticut,New Jersey,New Hampshire,Massachusetts,Maryland,Alaska,Hawaii,Virginia,California,Delaware
+1990,New Hampshire,Alaska,Hawaii,Connecticut,Maryland,New Jersey,Massachusetts,Virginia,California,Illinois
+1991,Connecticut,Alaska,New Jersey,Hawaii,Maryland,Virginia,New Hampshire,Massachusetts,Washington,California
+1992,Hawaii,Alaska,Connecticut,New Hampshire,New Jersey,Virginia,Maryland,Massachusetts,Delaware,California
+1993,Alaska,Hawaii,New Jersey,Maryland,Connecticut,New Hampshire,Massachusetts,Virginia,Delaware,Nevada
+1994,Alaska,New Jersey,Hawaii,Connecticut,Massachusetts,Maryland,Colorado,Virginia,Delaware,Nevada
+1995,Alaska,New Jersey,Hawaii,Maryland,Wisconsin,Colorado,Connecticut,New Hampshire,Massachusetts,Illinois
+1996,Alaska,New Jersey,Maryland,Connecticut,Hawaii,Minnesota,Colorado,Wisconsin,Illinois,Massachusetts
+1997,New Jersey,Alaska,Maryland,Washington,Connecticut,Colorado,Delaware,Virginia,Utah,Minnesota
+1998,Alaska,Maryland,New Jersey,Minnesota,Washington,Colorado,Connecticut,New Hampshire,Utah,Virginia
+1999,Maryland,Alaska,Connecticut,New Jersey,Colorado,Minnesota,Delaware,Illinois,Michigan,New Hampshire
+2000,Maryland,Minnesota,Alaska,Hawaii,New Hampshire,New Jersey,Delaware,Connecticut,Colorado,Utah
+2001,Alaska,Maryland,Connecticut,Minnesota,Massachusetts,New Jersey,New Hampshire,Virginia,Delaware,Colorado
+2002,Maryland,New Hampshire,Minnesota,New Jersey,Connecticut,Alaska,Massachusetts,Delaware,Virginia,Colorado
+2003,New Jersey,New Hampshire,Connecticut,Virginia,Minnesota,Maryland,Alaska,Hawaii,Massachusetts,Colorado
+2004,Maryland,New Hampshire,Hawaii,Minnesota,New Jersey,Connecticut,Alaska,Massachusetts,Virginia,Colorado
+2005,New Jersey,Maryland,Hawaii,New Hampshire,Connecticut,Massachusetts,Alaska,Utah,Minnesota,Virginia
+2006,New Jersey,Maryland,Connecticut,New Hampshire,Hawaii,Virginia,Alaska,Minnesota,Colorado,Massachusetts
+2007,New Hampshire,Maryland,Connecticut,Hawaii,Alaska,Colorado,New Jersey,Virginia,Massachusetts,Washington
+2008,New Hampshire,New Jersey,Connecticut,Alaska,Maryland,Utah,Virginia,Hawaii,Colorado,Massachusetts
+2009,Connecticut,New Jersey,Maryland,New Hampshire,Alaska,Virginia,Washington,Massachusetts,Utah,California
+2010,New Hampshire,Connecticut,Maryland,New Jersey,Massachusetts,Virginia,Colorado,Hawaii,Alaska,D.C.
+2011,Maryland,New Hampshire,Connecticut,Massachusetts,Virginia,New Jersey,Hawaii,Colorado,Minnesota,Alaska
+2012,Maryland,New Hampshire,New Jersey,D.C.,Virginia,Connecticut,Massachusetts,Alaska,Washington,Minnesota
+2013,New Hampshire,Connecticut,Virginia,Maryland,Colorado,Utah,Massachusetts,New Jersey,Hawaii,Alaska
+2014,Maryland,New Hampshire,Hawaii,Connecticut,D.C.,Alaska,Minnesota,Virginia,New Jersey,Utah
